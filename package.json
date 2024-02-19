@@ -13,8 +13,9 @@
     "url": "git+https://github.com/holic/foundryup-on-npm.git"
   },
   "files": [
-    "bin/*",
-    "package.json"
+    "bin/**/*",
+    "package.json",
+    "README.md"
   ],
   "bin": {
     "forge": "bin/forge.sh",
