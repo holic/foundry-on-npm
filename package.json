@@ -1,5 +1,5 @@
 {
-  "name": "foundryup",
+  "name": "@foundryup/foundry",
   "version": "0.0.0",
   "description": "foundry binaries on npm",
   "main": "index.js",
