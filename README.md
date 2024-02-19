@@ -1,4 +1,4 @@
-# foundryup
+# @foundryup/foundry
 
 [foundry](https://github.com/foundry-rs/foundry) binaries on npm
 
