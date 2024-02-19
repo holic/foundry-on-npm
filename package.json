@@ -1,29 +1,39 @@
 {
-  "name": "foundry-js",
-  "version": "1.0.0",
-  "description": "The foundry binary published to npmjs.",
+  "name": "foundryup",
+  "version": "0.0.0",
+  "description": "foundry binaries on npm",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "download": "node download.js",
-    "clean": "rm -rf bin/darwin_amd64 && rm -rf bin/darwin_arm64 && rm -rf bin/linux_amd64 && rm -rf bin/linux_arm64"
-  },
-  "author": "Soptq",
+  "contributors": [
+    "Soptq",
+    "holic"
+  ],
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holic/foundryup-on-npm.git"
+  },
   "files": [
     "bin/*",
-    "download.js",
     "package.json"
   ],
   "bin": {
-    "forge": "bin/forge-delegate.sh",
-    "cast": "bin/cast-delegate.sh",
-    "anvil": "bin/anvil-delegate.sh",
-    "chisel": "bin/chisel-delegate.sh"
+    "forge": "bin/forge.sh",
+    "cast": "bin/cast.sh",
+    "anvil": "bin/anvil.sh",
+    "chisel": "bin/chisel.sh"
   },
-  "dependencies": {
-    "adm-zip": "^0.5.10",
-    "node-fetch": "^2.7.0",
-    "tar": "^6.2.0"
+  "scripts": {
+    "release:publish": "tsx scripts/publishAll.ts"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.3",
+    "@types/node": "^20.11.19",
+    "@types/tar": "^6.1.11",
+    "@types/yauzl-promise": "^4.0.0",
+    "execa": "^8.0.1",
+    "tar": "^6.2.0",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3",
+    "yauzl-promise": "^4.0.0"
   }
 }

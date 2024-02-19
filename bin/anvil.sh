@@ -19,9 +19,9 @@ else
   ARCHITECTURE="amd64" # Amd.
 fi
 
-if [ ! -f "$(dirname $(realpath $0))/${PLATFORM}_${ARCHITECTURE}/forge" ]; then
-  echo "forge binary not found for ${PLATFORM}-${ARCHITECTURE}"
+if [ ! -f "$(dirname $(realpath $0))/foundry/${PLATFORM}_${ARCHITECTURE}/anvil" ]; then
+  echo "anvil binary not found for ${PLATFORM}-${ARCHITECTURE}"
   exit 1
 fi
 
-exec $(dirname $(realpath $0))/${PLATFORM}_${ARCHITECTURE}/forge "$@"
+exec $(dirname $(realpath $0))/foundry/${PLATFORM}_${ARCHITECTURE}/anvil "$@"
