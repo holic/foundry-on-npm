@@ -32,6 +32,8 @@ export async function fetchNightly(): Promise<readonly Nightly[]> {
         version: `0.2.0-nightly.${shortSha}`,
         assets: release.assets
           .filter((asset: any) => assetNamePattern.test(asset.name))
+          // Skip Windows binaries for now to keep under npm package limit
+          .filter((asset: any) => !asset.name.includes("win32"))
           .map((asset: any) => ({
             name: asset.name,
             platform: asset.name.replace(assetNamePattern, "$1"),
