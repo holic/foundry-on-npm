@@ -57,5 +57,5 @@ export async function publishNightly(release: Nightly): Promise<void> {
   console.log("doing clean install");
   execSync("npm clean-install");
   console.log("publishing");
-  execSync(`npm publish --acess public`);
+  execSync(`npm publish --access public`);
 }
