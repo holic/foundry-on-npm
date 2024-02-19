@@ -1,6 +1,6 @@
 # @foundryup/foundry
 
-[foundry](https://github.com/foundry-rs/foundry) binaries on npm
+[foundry](https://github.com/foundry-rs/foundry) binaries [on npm](https://www.npmjs.com/package/@foundryup/foundry)
 
 ## Install
 
