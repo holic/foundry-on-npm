@@ -1,8 +1,12 @@
 name: Publish to npm
 
 on:
-  # schedule:
-  #   - cron: "0 1 * * *"
+  schedule:
+    # run every 15 mins
+    # publish script is idempodent and bails early if there's no work to be done
+    # so we can safely run this on a regular interval to make sure our publish
+    # is not too far behind foundry's
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 # Ensure only one workflow/job is publishing to npm at a time
