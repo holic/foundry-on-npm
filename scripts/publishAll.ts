@@ -1,9 +1,9 @@
-import { fetchNightly } from "./fetchNightly";
+import { fetchNightly } from "../src/fetchNightly";
 import packageJson from "../package.json";
 import { execa } from "execa";
-import { publishNightly } from "./publishNightly";
+import { publishNightly } from "../src/publishNightly";
 
-const main = async () => {
+async function main() {
   const nightly = Array.from(await fetchNightly());
   nightly.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
 
@@ -64,6 +64,6 @@ const main = async () => {
       ]);
     }
   }
-};
+}
 
 main().catch(console.error);
