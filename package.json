@@ -10,7 +10,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/holic/foundryup-on-npm.git"
+    "url": "git+https://github.com/holic/foundry-on-npm.git"
   },
   "files": [
     "bin/**/*",
