@@ -49,21 +49,20 @@ async function main() {
 
     // the above publish defaults to using `latest` tag, so we'll reset it below
     // to make sure we're always marking the latest nightly as both `latest` and `nightly`
-    // TODO: figure out why this breaks with 400 error
-    // for (const tag of ["latest", "nightly"]) {
-    //   console.log(
-    //     "setting npm dist tag",
-    //     tag,
-    //     "to version",
-    //     latestNightly.version
-    //   );
-    //   await execa("npm", [
-    //     "dist-tag",
-    //     "add",
-    //     `${packageJson.name}@${latestNightly.version}`,
-    //     tag,
-    //   ]);
-    // }
+    for (const tag of ["latest", "nightly"]) {
+      console.log(
+        "setting npm dist tag",
+        tag,
+        "to version",
+        latestNightly.version
+      );
+      await execa("npm", [
+        "dist-tag",
+        "add",
+        `${packageJson.name}@${latestNightly.version}`,
+        tag,
+      ]);
+    }
   }
 }
 
